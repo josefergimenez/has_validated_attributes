@@ -18,8 +18,8 @@ class Resource < ActiveRecord::Base
                            positive_dollar_attr: { format: :positive_dollar },
                            percent_attr: { format: :percent },
                            positive_percent_attr: { format: :positive_percent },
-                           comparative_percent_attr: { format: :comparative_percent_attr },
-                           positive_comparative_percent_attr: { format: :positive_comparative_percent_attr },
+                           comparative_percent_attr: { format: :comparative_percent },
+                           positive_comparative_percent_attr: { format: :positive_comparative_percent },
                            url_attr: { format: :url },
                            ssn_attr: { format: :social_security_number },
                            taxid_attr: { format: :taxid },
@@ -64,8 +64,8 @@ describe "HasValidatedAttributes", type: :model do
       has_validated_url_attribute(:url_attr)
       has_validated_positive_percent_attribute(:positive_percent_attr)
       has_validated_percent_attribute(:percent_attr)
-      has_validated_positive_comparative_percent_attribute(:positive_comparative_percent_attr)
-      has_validated_percent_comparative_attribute(:comparative_percent_attr)
+      #has_validated_positive_comparative_percent_attribute(:positive_comparative_percent_attr)
+      has_validated_comparative_percent_attribute(:comparative_percent_attr)
       has_validated_age_attribute(:age_attr)
       has_validated_positive_dollar_attribute(:positive_dollar_attr)
       has_validated_dollar_attribute(:dollar_attr)

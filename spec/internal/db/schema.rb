@@ -19,6 +19,8 @@ ActiveRecord::Schema.define do
     t.string   "positive_dollar_attr"
     t.string   "percent_attr"
     t.string   "positive_percent_attr"
+    t.string   "comparative_percent_attr"
+    t.string   "positive_comparative_percent_attr"
     t.string   "url_attr"
     t.string   "age_attr"
     t.string   "number_attr"

@@ -64,7 +64,7 @@ module HasValidatedAttributes
               percent: { format: { with: /\A-?[0-9]{0,4}(\.[0-9]{0,4})?\z/, message: "accepts only numeric characters, period, negative sign, and must be equal/less/greater than +/- 100" }, numericality: { greater_than_or_equal_to: -100, less_than_or_equal_to: 100 }, has_if?: true },
               positive_percent: { format: { with: /\A[0-9]{0,4}(\.[0-9]{0,4})?\z/, message: "accepts only numeric characters, period, and must be equal/less than 100" }, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true },
               comparative_percent: { format: { with: /\A-?[0-9]{0,4}(\.[0-9]{0,4})?\z/, message: "accepts only numeric characters, period and a negative sign" }, has_if?: true },
-              positive_comparative_percentt: { format: { with: /\A[0-9]{0,4}(\.[0-9]{0,4})?\z/, message: "accepts only numeric characters and a period" }, allow_nil: true },
+              positive_comparative_percent: { format: { with: /\A[0-9]{0,4}(\.[0-9]{0,4})?\z/, message: "accepts only numeric characters and a period" }, allow_nil: true },
               url: { length: { maximum: 255 }, format: { with: URI::DEFAULT_PARSER.make_regexp, message: "web address isnt valid" }, has_if?: true },
               social_security_number: { length: { is: 9 }, numericality: { greater_than_or_equal_to: 0, less_than: 1000000000, message: "must be in the format 111-11-1111" }, has_if?: true },
               taxid: { length: { is: 9 }, numericality: { greater_than_or_equal_to: 9999999, less_than: 1000000000, message: "must be in the format 11-1111111" }, has_if?: true },
