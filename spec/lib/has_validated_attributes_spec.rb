@@ -64,7 +64,7 @@ describe "HasValidatedAttributes", type: :model do
       has_validated_url_attribute(:url_attr)
       has_validated_positive_percent_attribute(:positive_percent_attr)
       has_validated_percent_attribute(:percent_attr)
-      #has_validated_positive_comparative_percent_attribute(:positive_comparative_percent_attr)
+      has_validated_positive_comparative_percent_attribute(:positive_comparative_percent_attr)
       has_validated_comparative_percent_attribute(:comparative_percent_attr)
       has_validated_age_attribute(:age_attr)
       has_validated_positive_dollar_attribute(:positive_dollar_attr)
