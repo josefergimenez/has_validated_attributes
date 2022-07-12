@@ -50,18 +50,19 @@ spec:
 
 # This job gets the source from git 
   - name: build-ci-image
-    taskRef:
-      name: buildkit
-    workspaces:
-    - name: source
-      workspace: git-source
     params:
-    - name: TAG
-      value: $(params.git-sha)
-    - name: IMAGE
-      value: $(params.ci-image-name)
+      - name: TAG
+        value: $(params.git-sha)
+      - name: IMAGE
+        value: $(params.ci-image-name)
     runAfter:
       - fetch-from-git
+    taskRef:
+      kind: Task
+      name: buildkit
+    workspaces:
+      - name: source
+        workspace: git-source
 # This job gets the source from git 
   - name: run-specs
     taskRef:
