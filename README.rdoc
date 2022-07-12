@@ -1,5 +1,6 @@
 == HasValidatedAttributes {<img src="https://secure.travis-ci.org/kylejginavan/has_validated_attributes.png"/>}[http://travis-ci.org/kylejginavan/has_validated_attributes]
 
+
 == DESCRIPTION
 
 has_validated_attributes is a Ruby on Rails gem that lets you validate your fields .

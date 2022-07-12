@@ -179,6 +179,26 @@ RSpec.shared_examples_for "percent attribute" do |attr|
   end
 end
 
+RSpec.shared_examples_for "positive comparative percent attribute" do |attr|
+  ["1000", "999", "10", "444", "999.999", "990.9999", "0.0001"].each do |percent|
+    it { should allow_value(percent).for(attr) }
+  end
+
+  ["abc", "&", "-44", "-44.4", "-44.4444"].each do |percent|
+    it { should_not allow_value(percent).for(attr) }
+  end
+end
+
+RSpec.shared_examples_for "comparative percent attribute" do |attr|
+  ["1000", "999", "10", "444", "999.999", "999.9999", "0.001", "-1000", "-999", "-10", "-444", "-999.999", "-0.0001"].each do |value|
+    it { should allow_value(value).for(attr) }
+  end
+
+  ["abc", "&"].each do |value|
+    it { should_not allow_value(value).for(attr) }
+  end
+end
+
 RSpec.shared_examples_for "age attribute" do |attr|
   ["100", "99", "1 ", "44", "110", "0"].each do |value|
     it { should allow_value(value).for(attr) }

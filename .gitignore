@@ -20,3 +20,4 @@ spec/internal/log/*.log
 spec/internal/config/database.yml
 .tekton/charts*
 .tekton/Chart.lock
+.idea

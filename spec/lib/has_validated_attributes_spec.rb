@@ -18,6 +18,8 @@ class Resource < ActiveRecord::Base
                            positive_dollar_attr: { format: :positive_dollar },
                            percent_attr: { format: :percent },
                            positive_percent_attr: { format: :positive_percent },
+                           comparative_percent_attr: { format: :comparative_percent },
+                           positive_comparative_percent_attr: { format: :positive_comparative_percent },
                            url_attr: { format: :url },
                            ssn_attr: { format: :social_security_number },
                            taxid_attr: { format: :taxid },
@@ -40,6 +42,8 @@ class NormalizedResource < Resource
                             positive_dollar_attr: :dollar,
                             percent_attr: :percent,
                             positive_percent_attr: :percent,
+                            comparative_percent_attr: :percent,
+                            positive_comparative_percent_attr: :percent,
                             url_attr: :strip,
                             ssn_attr: :ssn,
                             taxid_attr: :taxid,
@@ -60,6 +64,8 @@ describe "HasValidatedAttributes", type: :model do
       has_validated_url_attribute(:url_attr)
       has_validated_positive_percent_attribute(:positive_percent_attr)
       has_validated_percent_attribute(:percent_attr)
+      has_validated_positive_comparative_percent_attribute(:positive_comparative_percent_attr)
+      has_validated_comparative_percent_attribute(:comparative_percent_attr)
       has_validated_age_attribute(:age_attr)
       has_validated_positive_dollar_attribute(:positive_dollar_attr)
       has_validated_dollar_attribute(:dollar_attr)
@@ -124,9 +130,9 @@ describe "HasValidatedAttributes", type: :model do
     before(:each) do
       @resource = Resource.create(username_attr: "testusername", name_attr: "testname", email_attr: "test@example.com",
         phone_number_attr: "1111111111", phone_extension_attr: "111111", domain_attr: "www.test.com", zipcode_attr: "11111",
-        middle_initial_attr: "A", dollar_attr: "-11", positive_dollar_attr: "1", percent_attr: "12",
+        middle_initial_attr: "A", dollar_attr: "-11", positive_dollar_attr: "1", percent_attr: "-12",
         positive_percent_attr: "99", url_attr: "http://www.google.com", ssn_attr: "111111111", taxid_attr: "111111111",
-        number_attr: "1")
+        comparative_percent_attr: "-250", positive_comparative_percent_attr: "250", number_attr: "1")
     end
 
     it "should return error" do
