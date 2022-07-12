@@ -18,4 +18,6 @@ spec/internal/config/database.yml
 spec/internal/log/*.log
 .byebug_history
 spec/internal/config/database.yml
+.tekton/charts*
+.tekton/Chart.lock
 .idea
