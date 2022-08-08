@@ -71,7 +71,7 @@ spec:
     - name: image
       value: $(params.ci-image-name):$(params.git-sha)
     - name: prepare-database
-      value: "true"
+      value: "false"
     - name: spec-path
       value: $(params.spec-path)
     - name: app

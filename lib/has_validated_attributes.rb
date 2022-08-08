@@ -70,7 +70,7 @@ module HasValidatedAttributes
               taxid: { length: { is: 9 }, numericality: { greater_than_or_equal_to: 9999999, less_than: 1000000000, message: "must be in the format 11-1111111" }, has_if?: true },
               age: { numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 110, message: "must contain only 3 numbers and less than 110" }, has_if?: true },
               number: { numericality: { message: "accepts only numbers (0-9)" }, has_if?: true },
-              description: { format: { with: NO_CONTROL_CHARS_REGEX, message: NO_CONTROL_CHARS_ERROR_MSG }, length: { maximum: 127 }, has_if?: true }
+              description: { format: { with: NO_CONTROL_CHARS_REGEX, message: NO_CONTROL_CHARS_ERROR_MSG }, length: { maximum: 255 }, has_if?: true }
 
   included do
     class_eval do
