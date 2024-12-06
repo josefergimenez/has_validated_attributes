@@ -45,7 +45,6 @@ module HasValidatedAttributes
       record.errors.add(attribute, "#{NO_CONTROL_CHARS_ERROR_MSG} for #{attribute}") unless NO_CONTROL_CHARS_REGEX =~ value.to_s.gsub(/[\n\r\t]/, "")
     end
   end
-
   # loading all methods dynamically
   validations name: { format: { with: NO_CONTROL_CHARS_REGEX, message: NO_CONTROL_CHARS_ERROR_MSG }, length: { maximum: 63 }, has_if?: true },
               safe_text: { safe_text: true, has_if?: true },
@@ -53,7 +52,7 @@ module HasValidatedAttributes
               rails_name: { format: { with: /\A[a-zA-Z\_]*?\z/u, message: "should only include underscores and letters" } },
               ## the regex for emails comes from
               ##   http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx/
-              email: { length: { maximum: 63 }, format: { with: /\A(?!\.)("([^"\r\\]|\\["\r\\])*"|([-a-z0-9!#$%&'’*+\/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)@[a-z0-9][\w\.-]*[a-z0-9]*\.[a-z][a-z\.]*[a-z]\z/i, message: "should look like an email address" }, has_if?: true },
+              email: { length: { maximum: 63 }, format: { with: /\A((?!\.)("([^"\\r\\n]|\\["\\r\\n])*"|[-a-z0-9!#$%&'*+\/=?^_`{|}~"]+(?:\.[-a-z0-9!#$%&'*+\/=?^_`{|}~"]+)*)(?<!\.)@[a-z0-9_](?!.*\.\.)(?!.*[~*\/\\'(),])(?:[a-z0-9_-]*[a-z0-9])?(?:\.[a-z0-9_-]*[a-z0-9])*\.[a-z]{2,})\z/i, message: "should look like an email address" }, has_if?: true },
               phone_number: { numericality: { greater_than_or_equal_to: 1000000000, less_than: 10000000000, message: "accepts only 10 numbers and (),.- characters and must not be all 0s" }, has_if?: true },
               phone_extension: { length: { maximum: 7 }, format: { with: /\A\d+([\dxX]*\d)?\z/, message: 'accepts only numbers (0-9) and "x"' }, has_if?: true },
               domain: { length: { maximum: 63 }, format: { with: /[a-z0-9-]+\.[a-z0-9\-\/\.]+/, message: "should look like a domain name" }, has_if?: true },
