@@ -74,11 +74,11 @@ end
 RSpec.shared_examples_for "email attribute" do |attr|
   it { should validate_length_of(attr).is_at_most(HasValidatedAttributes.email_format[:length][:maximum]) }
 
-  ["abc@example.com", "Abc@example.com", "aBC@example.com", "abc.123@example.com", "mo’reilly@example.com", "ro'sullivan@example.com", "abc@example.comar"].each do |value|
+  ["abc@example.com", "Abc@example.com", "aBC@example.com", "abc.123@example.com", "mo'reilly@example.com", "ro'sullivan@example.com", "abc@example.comar"].each do |value|
     it { should allow_value(value).for(attr) }
   end
 
-  ["Abc.example.com", "A@b@c@example.com", "()[]\;:,<>@example.com"].each do |value|
+  ["Abc.example.com", "A@b@c@example.com", "()[]\;:,<>@example.com", "A@b@c@example..com"].each do |value|
     it { should_not allow_value(value).for(attr).with_message(HasValidatedAttributes.email_format[:format][:message].call(nil, attribute: attr.to_s.humanize)) }
   end
 end
