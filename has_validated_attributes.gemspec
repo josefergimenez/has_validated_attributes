@@ -31,5 +31,5 @@ Gem::Specification.new do |s|
   # hq
   s.add_development_dependency "has_normalized_attributes",  "~> 5.0.0.pre.beta.2"
 
-  s.add_development_dependency "testhq",                     "~> 5.0.0.pre.beta.3"
+  s.add_development_dependency "testhq",                     "~> 5.0.0.pre.beta.4"
 end
