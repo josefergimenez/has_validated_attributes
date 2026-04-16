@@ -45,15 +45,11 @@ RSpec.shared_examples_for "name attribute" do |attr, length: HasValidatedAttribu
     "A", "z", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")",
     "{", "}", "?", "+", "[", "]", "/", "\\", "-", "_", "<", ">",
     "k c", "- H-", " t", "& u", "21 ", "brok", ">*", "< test"
-  ].
-    select { |str| str.length <= length }.
-    each do |str|
+  ].select { |str| str.length <= length }.each do |str|
     it { should allow_value(str).for(attr) }
   end
 
-  ["\e1B", "\cF", "Hello\nWorld", "\eHey", "Oh\cFNo, it's a control char!"].
-    select { |str| str.length <= length }.
-    each do |str|
+  ["\e1B", "\cF", "Hello\nWorld", "\eHey", "Oh\cFNo, it's a control char!"].select { |str| str.length <= length }.each do |str|
     it { should_not allow_value(str).for(attr).with_message(HasValidatedAttributes.name_format[:format][:message].call(nil, attribute: attr.to_s.humanize)) }
   end
 end
