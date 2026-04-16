@@ -35,4 +35,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Ruby version upgraded to 3.4.4
-- In the gemspec file, allow to be used for Rails versions between 6.0 and 8.1.1.
+- In the gemspec file, allow to be used for Rails versions between 6.0 and 7.2.3.

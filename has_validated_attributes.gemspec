@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sprockets",                          "~> 3.0"
 
   # hq
-  s.add_development_dependency "has_normalized_attributes",          "~> 5.0.0.pre.beta.3"
+  s.add_development_dependency "has_normalized_attributes",          ">= 5.0.0.pre", "< 5.1.0"
 
-  s.add_development_dependency "testhq",                             "~> 5.0.0.pre.beta.5"
+  s.add_development_dependency "testhq",                             ">= 5.0.0.pre", "< 5.1.0"
 end
