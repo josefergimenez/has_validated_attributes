@@ -21,3 +21,4 @@ spec/internal/config/database.yml
 .tekton/charts*
 .tekton/Chart.lock
 .idea
+.DS_Store
