@@ -9,7 +9,7 @@ require "has_validated_attributes/version"
 Gem::Specification.new do |s|
   s.name                  = "has_validated_attributes"
   s.version               = HasValidatedAttributes::VERSION
-  s.required_ruby_version = ">= 3.4"
+  s.required_ruby_version = ">= 3.0.0", "< 4.0.0"
   s.authors               = ["Kyle Ginavan"]
   s.date                  = "2010-05-18"
   s.description           = "has_validated_attributes is a Ruby on Rails gem that lets you validate your fields."
