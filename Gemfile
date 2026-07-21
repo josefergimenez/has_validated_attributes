@@ -2,11 +2,10 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-source "https://vLEyAxzPMpJK8itRTFw6@gem.fury.io/onehq/"
-
 
 source "https://vLEyAxzPMpJK8itRTFw6@gem.fury.io/onehq/" do
-  gem "testhq"
+  gem "has_normalized_attributes",         "~> 5.0"
+  gem "testhq",                            "~> 5.0"
 end
 
 # Specify your gem's dependencies in send_grid.gemspec

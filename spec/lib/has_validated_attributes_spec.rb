@@ -90,7 +90,7 @@ describe "HasValidatedAttributes", type: :model do
           it { subject.email_attr = "NotAnEmail"; expect(subject).to be_invalid }
           it { subject.email_attr = "@NotAnEmail"; expect(subject).to be_invalid }
           # it { subject.email_attr = """test\\blah""@example.com"; expect(subject).to be_valid }
-          it { subject.email_attr = """test\blah""@example.com"; expect(subject).to be_invalid }
+          it { subject.email_attr = "" "test\blah" "@example.com"; expect(subject).to be_invalid }
           it { subject.email_attr = "\"test\\\rblah\"@example.com"; expect(subject).to be_valid }
           it { subject.email_attr = "\"test\rblah\"@example.com"; expect(subject).to be_invalid }
           # it { subject.email_attr = """test\""blah""@example.com"; expect(subject).to be_valid }, true
@@ -106,7 +106,7 @@ describe "HasValidatedAttributes", type: :model do
           it { subject.email_attr = ".@example.com"; expect(subject).to be_invalid }
           # it { subject.email_attr = """Austin@Powers""@example.com"; expect(subject).to be_valid }
           it { subject.email_attr = "Ima.Fool@example.com"; expect(subject).to be_valid }
-          it { subject.email_attr = """Ima.Fool""@example.com"; expect(subject).to be_valid }
+          it { subject.email_attr = "" "Ima.Fool" "@example.com"; expect(subject).to be_valid }
           # it { subject.email_attr = """Ima Fool""@example.com"; expect(subject).to be_valid }
           it { subject.email_attr = "Ima Fool@example.com"; expect(subject).to be_invalid }
           it { subject.email_attr = "test@q.com"; expect(subject).to be_valid }
@@ -129,10 +129,10 @@ describe "HasValidatedAttributes", type: :model do
   describe "#username" do
     before(:each) do
       @resource = Resource.create(username_attr: "testusername", name_attr: "testname", email_attr: "test@example.com",
-        phone_number_attr: "1111111111", phone_extension_attr: "111111", domain_attr: "www.test.com", zipcode_attr: "11111",
-        middle_initial_attr: "A", dollar_attr: "-11", positive_dollar_attr: "1", percent_attr: "-12",
-        positive_percent_attr: "99", url_attr: "http://www.google.com", ssn_attr: "111111111", taxid_attr: "111111111",
-        comparative_percent_attr: "-250", positive_comparative_percent_attr: "250", number_attr: "1")
+                                  phone_number_attr: "1111111111", phone_extension_attr: "111111", domain_attr: "www.test.com", zipcode_attr: "11111",
+                                  middle_initial_attr: "A", dollar_attr: "-11", positive_dollar_attr: "1", percent_attr: "-12",
+                                  positive_percent_attr: "99", url_attr: "http://www.google.com", ssn_attr: "111111111", taxid_attr: "111111111",
+                                  comparative_percent_attr: "-250", positive_comparative_percent_attr: "250", number_attr: "1")
     end
 
     it "with invalid usernames" do
@@ -147,7 +147,7 @@ describe "HasValidatedAttributes", type: :model do
     end
 
     it "with valid usernames" do
-      ["testuser","user_name","user.name","user-name","user+tag","user+tag@domain","user_123","john.doe-99"].each do |value|
+      ["testuser", "user_name", "user.name", "user-name", "user+tag", "user+tag@domain", "user_123", "john.doe-99"].each do |value|
         @resource.username_attr = value
 
         expect(@resource.valid?).to be_truthy

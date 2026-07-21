@@ -1,2 +1,2 @@
 inherit_from:
-  - https://onehq.com/rubocop3.yml
+  - https://onehq.com/rubocop3_4.yml

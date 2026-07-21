@@ -5,28 +5,28 @@ orbs:
   github: onehq/github@1.2.2
 
 aliases:
-- &app has_validated_attributes
-- &checksum has_validated_attributes.gemspec
+  - &app has_validated_attributes
+  - &checksum has_validated_attributes.gemspec
 
 workflows:
   build-deploy:
     jobs:
-    - ruby/run_specs:
-        app: *app
-        checksum: *checksum
-        isGem: true
-    - ruby/run_rubocop:
-        app: *app
-        checksum: *checksum
-        requires:
-        - ruby/run_specs
-    - ruby/publish_gem:
-        app: *app
-        checksum: *checksum
-        requires:
-        - ruby/run_rubocop
-        - ruby/run_specs
-        filters:
-          branches:
-            only:
-            - master
+      - ruby/run_specs:
+          app: *app
+          checksum: *checksum
+          isGem: true
+      - ruby/run_rubocop:
+          app: *app
+          checksum: *checksum
+          requires:
+            - ruby/run_specs
+      - ruby/publish_gem:
+          app: *app
+          checksum: *checksum
+          requires:
+            - ruby/run_rubocop
+            - ruby/run_specs
+          filters:
+            branches:
+              only:
+                - master

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module HasValidatedAttributes
-  VERSION = "2.0.10"
+  VERSION = "5.0.0"
 end
