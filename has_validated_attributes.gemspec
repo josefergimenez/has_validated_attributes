@@ -22,14 +22,15 @@ Gem::Specification.new do |s|
   s.require_paths         = ["lib"]
   s.summary               = "Ruby on Rails gem for validate data prior to save"
 
-  s.add_development_dependency "rails",                              ">= 6.0", "< 7.2.4"
+  s.add_dependency "activerecord",                                           "~> 8.0.0"
+  s.add_development_dependency "rails",                              "~> 8.0.0"
 
   s.add_development_dependency "ostruct",                            "~> 0.6"
   s.add_development_dependency "pg",                                 "~> 1.1"
   s.add_development_dependency "sprockets",                          "~> 3.0"
 
   # hq
-  s.add_development_dependency "has_normalized_attributes",          "~> 5.0"
+  s.add_development_dependency "has_normalized_attributes",          "~> 6.0.0.beta1"
 
-  s.add_development_dependency "testhq",                             "~> 5.0"
+  s.add_development_dependency "testhq",                             "~> 6.0.0.beta2"
 end

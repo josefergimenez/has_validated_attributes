@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require "active_record"
+require "uri"
 
 module HasValidatedAttributes
   extend ActiveSupport::Concern
