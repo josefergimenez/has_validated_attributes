@@ -22,6 +22,10 @@ Gem::Specification.new do |s|
   s.require_paths         = ["lib"]
   s.summary               = "Ruby on Rails gem for validate data prior to save"
 
+  # ActiveSupport 8.0 passes quirks_mode, which JSON 3 rejects.
+
+  s.add_dependency "json", "< 3"
+
   s.add_dependency "activerecord",                                           "~> 8.0.0"
   s.add_development_dependency "rails",                              "~> 8.0.0"
 
