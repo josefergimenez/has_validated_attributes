@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sprockets",                          "~> 3.0"
 
   # hq
-  s.add_development_dependency "has_normalized_attributes",          "~> 6.0.0.beta1"
+  s.add_development_dependency "has_normalized_attributes",          "~> 6.0.0.beta2"
 
-  s.add_development_dependency "testhq",                             "~> 6.0.0.beta2"
+  s.add_development_dependency "testhq",                             "~> 6.0.0.beta3"
 end
