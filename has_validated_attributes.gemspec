@@ -26,15 +26,15 @@ Gem::Specification.new do |s|
 
   s.add_dependency "json", "< 3"
 
-  s.add_dependency "activerecord",                                           "~> 8.0.0"
-  s.add_development_dependency "rails",                              "~> 8.0.0"
+  s.add_dependency "activerecord",                                           ">= 8.0", "< 8.2"
+  s.add_development_dependency "rails",                              ">= 8.0", "< 8.2"
 
   s.add_development_dependency "ostruct",                            "~> 0.6"
   s.add_development_dependency "pg",                                 "~> 1.1"
   s.add_development_dependency "sprockets",                          "~> 3.0"
 
   # hq
-  s.add_development_dependency "has_normalized_attributes",          "~> 6.0.0"
+  s.add_development_dependency "has_normalized_attributes",          "~> 6.1.0"
 
-  s.add_development_dependency "testhq",                             "~> 6.0.0"
+  s.add_development_dependency "testhq",                             "~> 6.1.0"
 end
